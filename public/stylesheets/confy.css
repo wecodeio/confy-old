@@ -101,9 +101,14 @@ a:focus {
   margin-bottom: 0.2em;
 }
 .conference-logo {
-  border-radius: 50px;
+  height: 150px;
+  width: 150px;
+  border-radius: 80px;
+  border-style: solid;
+  border-width: thin;
   display: inline-block;
   float: left;
+  margin-right: 1em;
 }
 .conference-logo img{
   border-radius: 80px;
