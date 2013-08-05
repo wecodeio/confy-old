@@ -15,18 +15,10 @@ gem 'rake'
 
 # Component requirements
 gem 'haml'
-gem 'sqlite3'
-gem 'sequel'
+# gem 'sequel'
+# gem 'pg'
 
 # Test requirements
 
 # Padrino Stable Gem
 gem 'padrino', '0.11.3'
-
-# Or Padrino Edge
-# gem 'padrino', :github => 'padrino/padrino-framework'
-
-# Or Individual Gems
-# %w(core gen helpers cache mailer admin).each do |g|
-#   gem 'padrino-' + g, '0.11.3'
-# end
