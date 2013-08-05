@@ -1,0 +1,46 @@
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title confy
+    %link{:href => "/stylesheets/pure-min.css", :rel => "stylesheet"}/
+    %link{:href => "/stylesheets/confy.css", :rel => "stylesheet"}/
+    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel => "stylesheet"}/
+    %script{:src => "http://use.typekit.net/ajf8ggy.js"}
+    :javascript
+      try { Typekit.load(); } catch (e) {}
+  %body
+    #layout.pure-g-r
+      .sidebar.pure-u
+        %header.header
+          %hgroup
+            %h1.brand-title confy
+            %h2.brand-tagline the conferences directory
+          %nav.nav
+            %ul.nav-list
+              %li.nav-item
+                %a.pure-button{href: '/conferences/list'} Conferences
+              %li.nav-item
+                %a.pure-button{href: '#'} Speakers (coming soon)
+          .call-to-action
+            your conference isn't in the list?
+            %a{href: 'http://www.twitter.com/wecodeio'} Tweet us!
+      .pure-u-1
+        .content
+          = yield
+          %footer.footer
+            .pure-menu.pure-menu-horizontal.pure-menu-open
+              %ul
+                %li
+                  %a{:href => "http://delucas.github.io/about"} About
+                %li
+                  %a{:href => "http://twitter.com/wecodeio"} Twitter
+                %li
+                  %a{:href => "http://github.com/wecodeio/confy"} Github
+    %script{:src => "http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"}
+    :javascript
+      YUI().use('node-base', 'node-event-delegate', function (Y) {
+          Y.one('body').delegate('click', function (e) {
+              e.preventDefault();
+          }, 'a[href="#"]');
+      });
