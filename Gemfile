@@ -15,8 +15,11 @@ gem 'rake'
 
 # Component requirements
 gem 'haml'
-# gem 'sequel'
-# gem 'pg'
+
+gem 'sequel'
+gem 'sequel-pg_array'
+
+gem 'pg'
 
 # Test requirements
 

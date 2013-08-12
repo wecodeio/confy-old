@@ -1,61 +1,31 @@
+- p conferences
 .conferences
   %h1.content-subhead Upcoming conferences
-  %section.conference.pure-u-1
-    %aside.conference-logo.pure-u-1-5
-      %img{:alt => "RubyConf Argentina", :src => "/images/conferences/rubyconfar-2013.png"}/
-    .conference-description.pure-u-4-5
-      %header.conference-header
-        %h2.conference-title RubyConf Argentina 2013
-        %p.conference-meta
-          %span.conference-tag Ruby
-          %span.conference-tag Rails
-      %p
-        RubyConf Argentina is a regional conference about Ruby and related technologies.
-      .conference-data
-        %span.when
-          %i.icon-calendar
-          27-28 Nov 2013
-          |
-        %span.where
-          %i.icon-map-marker
-          %a{href: 'http://goo.gl/maps/MIWv7', title: 'Ciudad Cultural Konex', target: 'blank'} Ciudad Cultural Konex, AR
-          |
-        %span.who
-          %i.icon-twitter
-          %a{href: 'http://twitter.com/RubyConfAR', title: 'RubyConfAR', target: 'blank'}  @RubyConfAR
-          |
-        %span.info
-          %i.icon-external-link
-          %a{href: 'http://www.rubyconfargentina.org', title: 'RubyConf Argentina', target: 'blank'} rubyconfargentina.org
-  %section.conference.pure-u-1
-    %aside.conference-logo.pure-u-1-5
-      %img{:alt => "StarTechConf", :src => "/images/conferences/startechconf-2013.png"}/
-    .conference-description.pure-u-4-5
-      %header.conference-header
-        %h2.conference-title StarTechConf 2013
-        %p.conference-meta
-          %span.conference-tag Ruby
-          %span.conference-tag Python
-          %span.conference-tag Java
-          %span.conference-tag Mobile
-          %span.conference-tag JavaScript
-          %span.conference-tag HTML5
-          %span.conference-tag CSS3
-      %p
-        The conference that brings together world renowned stars in software development and local tech experts to talk about HTML5, CSS3, JavaScript, Ruby, Java, Python, Mobile and more.
-      .conference-data
-        %span.when
-          %i.icon-calendar
-          25-26 Oct 2013
-          |
-        %span.where
-          %i.icon-map-marker
-          %a{href: 'http://goo.gl/maps/G0O7G', title: 'Universidad Tecnica Federico Santa Maria', target: 'blank'} USM Campus San Joaquin, CL
-          |
-        %span.who
-          %i.icon-twitter
-          %a{href: 'http://twitter.com/startechconf', title: 'StarTechConf', target: 'blank'} @startechconf
-          |
-        %span.info
-          %i.icon-external-link
-          %a{href: 'http://www.startechconf.com', title: 'StarTechConf', target: 'blank'} startechconf.com
+  - conferences.each do |conference|
+    %section.conference.pure-u-1
+      %aside.conference-logo.pure-u-1-5
+        %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
+      .conference-description.pure-u-4-5
+        %header.conference-header
+          %h2.conference-title #{conference.title}
+          %p.conference-meta
+            - conference.tags.each do |tag|
+              %span.conference-tag #{tag}
+        %p
+          #{conference.description}
+        .conference-data
+          %span.when
+            %i.icon-calendar
+            #{date_range(conference.start_date, conference.end_date)}
+            |
+          %span.where
+            %i.icon-map-marker
+            %a{href: conference.place_url, title: conference.place, target: 'blank'} #{conference.place}
+            |
+          %span.who
+            %i.icon-twitter
+            %a{href: "http://twitter.com/#{conference.twitter}", title: conference.twitter, target: 'blank'}  #{conference.twitter}
+            |
+          %span.info
+            %i.icon-external-link
+            %a{href: conference.url, title: conference.title, target: 'blank'} #{url_cropper(conference.url)}
