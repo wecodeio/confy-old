@@ -6,7 +6,7 @@ module Confy
     enable :sessions
 
     get :index do
-      redirect 'conferences/list'
+      redirect 'conferences/upcoming'
     end
   end
 end

@@ -1,31 +1,9 @@
-- p conferences
 .conferences
-  %h1.content-subhead Upcoming conferences
-  - conferences.each do |conference|
-    %section.conference.pure-u-1
-      %aside.conference-logo.pure-u-1-5
-        %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
-      .conference-description.pure-u-4-5
+  %h1.content-subhead All conferences
+  %section.conferences-grid.pure-g-r
+    - conferences.each do |conference|
+      %article.conference.pure-u-1-4
+        .conference-logo
+          %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
         %header.conference-header
           %h2.conference-title #{conference.title}
-          %p.conference-meta
-            - conference.tags.each do |tag|
-              %span.conference-tag #{tag}
-        %p
-          #{conference.description}
-        .conference-data
-          %span.when
-            %i.icon-calendar
-            #{date_range(conference.start_date, conference.end_date)}
-            |
-          %span.where
-            %i.icon-map-marker
-            %a{href: conference.place_url, title: conference.place, target: 'blank'} #{conference.place}
-            |
-          %span.who
-            %i.icon-twitter
-            %a{href: "http://twitter.com/#{conference.twitter}", title: conference.twitter, target: 'blank'}  #{conference.twitter}
-            |
-          %span.info
-            %i.icon-external-link
-            %a{href: conference.url, title: conference.title, target: 'blank'} #{url_cropper(conference.url)}

@@ -1,0 +1,9 @@
+.speakers
+  %h1.content-subhead All speakers
+  %section.speakers-grid.pure-g-r
+    - speakers.each do |speaker|
+      %article.speaker.pure-u-1-4
+        .speaker-avathar
+          %img{:title => speaker.name, :alt => speaker.name, :src => speaker.image_url}/
+        %header.speaker-header
+          %h2.speaker-name #{speaker.name}

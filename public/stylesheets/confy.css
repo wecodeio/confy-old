@@ -52,8 +52,6 @@ a:focus {
   list-style: none;
 }
 .nav-item {
-  display: inline-block;
-  *display: inline;
   zoom: 1;
 }
 .nav-item a {
@@ -156,6 +154,40 @@ a:focus {
   margin-left: 1em;
   color: #fff;
   text-shadow: 0 1px 1px #333;
+}
+
+.conferences-grid .conference {
+  border-bottom: none;
+}
+.conferences-grid .conference-logo {
+  width: 100px;
+  height: 100px;
+}
+.conferences-grid .conference-title {
+  font-size: 1em;
+}
+
+.speakers-grid .speaker {
+  position: relative;
+  margin-bottom: 1.5em;
+}
+.speakers-grid .speaker-avathar {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  display: inline-block;
+}
+.speakers-grid .speaker-avathar img {
+  border-radius: 80px;
+}
+.speakers-grid header {
+  margin-left: 8px;
+  position: absolute;
+  top: 1em;
+  display: inline-block;
+}
+.speakers-grid .speaker-name {
+  font-size: 1em;
 }
 
 .data {
