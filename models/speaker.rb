@@ -5,5 +5,5 @@ class Speaker < Sequel::Model
       order(:name)
     end
   end
-  
+
 end

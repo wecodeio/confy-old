@@ -2,6 +2,7 @@ require 'date'
 
 Sequel.extension :pg_array
 
+Talk.dataset.destroy
 Conference.dataset.destroy
 Speaker.dataset.destroy
 
@@ -22,21 +23,29 @@ startechconf2013 = Conference.create(:title => 'StarTechConf 2013',
   :tags => ['ruby', 'python', 'java', 'mobile', 'javascript', 'html5', 'css3'])
 
 rubyconfar2012 = Conference.create(:title => 'RubyConf Argentina 2012',
-  :description => 'El mayor evento Ruby de habla hispana, donde nos reunimos a compartir y aprender sobre las últimas tecnologías!',
+  :description => '¡El mayor evento Ruby de habla hispana, donde nos reunimos a compartir y aprender sobre las últimas tecnologías!',
   :image_url => '/images/conferences/rubyconfar-2012.png',
   :start_date => Date.new(2012,10,19), :end_date => Date.new(2012,10,20),
   :place => 'Paseo La Plaza, AR', :place_url => 'http://goo.gl/maps/z0vIo',
   :twitter => 'RubyConfAr', :url => 'http://2012.rubyconfargentina.org/',
   :tags => ['ruby', 'rails'])
 
-coreyhaines = Speaker.create(:name => 'Corey Haines',
-  :image_url => 'https://si0.twimg.com/profile_images/1508969901/Photo_on_2011-08-22_at_19.15__3_bigger.jpg',
-  :twitter => 'coreyhaines')
+soveran = Speaker.create(:name => 'Michel Martens',
+  :image_url => 'https://si0.twimg.com/profile_images/3001078658/42ffd0a3f827cafc6d8ab6c4b08043b3_bigger.jpeg',
+  :twitter => 'soveran')
 
-unclebob = Speaker.create(:name => 'Robert C. Martin',
-  :image_url => 'https://si0.twimg.com/profile_images/1102364992/clean_code_72_color_bigger.png',
-  :twitter => 'unclebobmartin')
+smallTools = Talk.create(:title => 'The Power of Small Tools',
+  :video_url => 'https://vimeo.com/63628137',
+  :date => Date.new(2012,10,19),
+  :speaker_id => soveran.id,
+  :conference_id => rubyconfar2012.id)
 
-venkat = Speaker.create(:name => 'Venkat Subramaniam',
-  :image_url => 'https://si0.twimg.com/profile_images/633469991/venkatsubramaniam_bigger.jpg',
-  :twitter => 'venkat_s')
+jano = Speaker.create(:name => 'Jano González',
+  :image_url => 'https://si0.twimg.com/profile_images/3761141739/75eb7a0c6b5f1a9f7da287e1f92d351c_bigger.jpeg',
+  :twitter => 'janogonzalez')
+
+interfaces = Talk.create(:title => '¿Dónde están mis interfaces?',
+  :video_url => 'https://vimeo.com/62132088',
+  :date => Date.new(2012,10,19),
+  :speaker_id => jano.id,
+  :conference_id => rubyconfar2012.id)

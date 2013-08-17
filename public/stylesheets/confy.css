@@ -98,6 +98,11 @@ a:focus {
   color: #222;
   margin-bottom: 0.2em;
 }
+
+.conference-title a {
+  color: #222;
+}
+
 .conference-logo {
   height: 150px;
   width: 150px;
@@ -188,6 +193,14 @@ a:focus {
 }
 .speakers-grid .speaker-name {
   font-size: 1em;
+}
+
+.talk-video {
+  padding: 5px;
+}
+.talk-header .talk-title {
+  font-size: 1em;
+  font-weight: normal;
 }
 
 .data {

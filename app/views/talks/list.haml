@@ -1,0 +1,9 @@
+.talks
+  %h1.content-subhead All talks
+  %section.talks-grid.pure-g-r
+    - talks.each do |talk|
+      %article.talk.pure-u-1-2
+        .talk-video
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
+        %header.talk-header
+          %h2.talk-title #{talk.title}, by #{talk.speaker.name}

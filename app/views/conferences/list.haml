@@ -2,8 +2,11 @@
   %h1.content-subhead All conferences
   %section.conferences-grid.pure-g-r
     - conferences.each do |conference|
-      %article.conference.pure-u-1-4
+      %article.conference.pure-u-1-3
         .conference-logo
-          %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
+          %a{:href => "/conferences/show/#{conference.id}"}
+            %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
         %header.conference-header
-          %h2.conference-title #{conference.title}
+          %h2.conference-title
+            %a{:href => "/conferences/show/#{conference.id}"}
+              #{conference.title}
