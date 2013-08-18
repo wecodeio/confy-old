@@ -85,6 +85,14 @@ a:focus {
   padding: 1em 3em 0;
 }
 
+.alert-info {
+  background-color: #8E8ED6;
+  border: solid 1px rgb(24, 33, 61);
+  color: rgb(24, 33, 61);
+  padding: 8px;
+  margin: 20px 10px;
+}
+
 .conference {
   padding-bottom: 1em;
   border-bottom: 1px solid #ddd;
@@ -176,13 +184,13 @@ a:focus {
   position: relative;
   margin-bottom: 1.5em;
 }
-.speakers-grid .speaker-avathar {
+.speaker-avathar {
   width: 80px;
   height: 80px;
   text-align: center;
   display: inline-block;
 }
-.speakers-grid .speaker-avathar img {
+.speaker-avathar img {
   border-radius: 80px;
 }
 .speakers-grid header {
@@ -198,9 +206,28 @@ a:focus {
 .talk-video {
   padding: 5px;
 }
-.talk-header .talk-title {
+.talk-header {
+  position: relative;
+}
+.talk-header .title {
   font-size: 1em;
-  font-weight: normal;
+  font-weight: bold;
+  line-height: 1em;
+}
+.talk .speaker-avathar {
+  float: left;
+}
+.talk .info {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+.talk .info .speaker-name {
+  margin-bottom: 0.1em;
+  margin-top: 0.5em;
+}
+
+.talk .info .title {
+  margin-top: 0;
 }
 
 .data {
@@ -210,6 +237,8 @@ a:focus {
 
 .footer {
   border-top: 1px solid #ddd;
+  height: 40px;
+  margin-top: 40px;
 }
 .footer a {
   color: #777;
