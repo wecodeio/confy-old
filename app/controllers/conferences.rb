@@ -14,7 +14,6 @@ Confy::App.controllers :conferences do
 
   get 'show/:id' do
     conference = Conference[params[:id]]
-    puts conference
     render 'conferences/show',
       locals: { conference: conference },
       :layout => 'layout'

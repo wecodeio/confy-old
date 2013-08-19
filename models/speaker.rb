@@ -6,4 +6,8 @@ class Speaker < Sequel::Model
     end
   end
 
+  def talks
+    Talk.where(:speaker_id => id)
+  end
+
 end

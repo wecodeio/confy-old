@@ -1,0 +1,19 @@
+.speaker-hero
+  .speaker-avathar
+    %img{:title => speaker.name, :alt => speaker.name, :src => speaker.image_url}/
+  .info
+    %header.speaker-header
+      %h2.speaker-name #{speaker.name}
+
+- if speaker.talks.count > 0
+  %section.talks-grid.pure-g-r
+    - speaker.talks.each do |talk|
+      %article.talk.pure-u-1-2
+        .talk-video
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
+        %header.talk-header
+          .info
+            %h1.title #{talk.title}
+- else
+  .alert-info
+    There aren't any talks for this speaker (yet)

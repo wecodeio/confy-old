@@ -6,4 +6,11 @@ Confy::App.controllers :speakers do
       :layout => 'layout'
   end
 
+  get 'show/:id' do
+    speaker = Speaker[params[:id]]
+    render 'speakers/show',
+      locals: { speaker: speaker },
+      :layout => 'layout'
+  end
+
 end
