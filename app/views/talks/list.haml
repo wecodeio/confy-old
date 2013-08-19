@@ -6,4 +6,8 @@
         .talk-video
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
         %header.talk-header
-          %h2.talk-title #{talk.title}, by #{talk.speaker.name}
+          .speaker-avathar
+            %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
+          .info
+            %p.speaker-name #{talk.speaker.name}
+            %h1.title #{talk.title}
