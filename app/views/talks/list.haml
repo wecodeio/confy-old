@@ -10,4 +10,6 @@
             %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
           .info
             %p.speaker-name #{talk.speaker.name}
-            %h1.title #{talk.title}
+            %h1.title
+              %a{:href => "/talks/show/#{talk.id}"}
+                #{talk.title}

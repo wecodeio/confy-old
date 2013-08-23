@@ -107,10 +107,6 @@ a:focus {
   margin-bottom: 0.2em;
 }
 
-.conference-title a {
-  color: #222;
-}
-
 .conference-logo {
   height: 150px;
   width: 150px;
@@ -204,7 +200,9 @@ a:focus {
   margin-top: 0;
   position: absolute;
 }
-.speaker-header a {
+.speaker-header a,
+.talk-header a,
+.conference-title a {
   color: #222;
 }
 .speakers-grid header {
@@ -222,11 +220,18 @@ a:focus {
 }
 .talk-header {
   position: relative;
+  margin-top: 15px;
 }
 .talk-header .title {
   font-size: 1em;
   font-weight: bold;
   line-height: 1em;
+}
+.talk-header.jumbo h1 {
+  font-size: 1.5em;
+}
+.talk .video {
+  margin-top: 20px;
 }
 .talk .speaker-avathar {
   float: left;
