@@ -8,8 +8,8 @@ Confy::App.controllers :speakers do
       :layout => 'layout'
   end
 
-  get 'show/:id' do
-    speaker = Speaker[params[:id]]
+  get ':twitter' do
+    speaker = Speaker.where(:twitter => params[:twitter]).first
     render 'speakers/show',
       locals: { speaker: speaker, title: "#{speaker.name} - confy" },
       :layout => 'layout'

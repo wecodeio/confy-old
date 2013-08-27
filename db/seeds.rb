@@ -12,7 +12,8 @@ rubyconfar2013 = Conference.create(:title => 'RubyConf Argentina 2013',
   :start_date => Date.new(2013,11,27), :end_date => Date.new(2013,11,28),
   :place => 'Ciudad Cultural Konex, AR', :place_url => 'http://goo.gl/maps/MIWv7',
   :twitter => 'RubyConfAr', :url => 'http://www.rubyconfargentina.org/',
-  :tags => ['ruby', 'rails'])
+  :tags => ['ruby', 'rails'],
+  :year => 2013, :short_url => 'rubyconfar')
 
 startechconf2013 = Conference.create(:title => 'StarTechConf 2013',
   :description => 'The conference that brings together world renowned stars in software development and local tech experts to talk about HTML5, CSS3, JavaScript, Ruby, Java, Python, Mobile and more.',
@@ -20,7 +21,8 @@ startechconf2013 = Conference.create(:title => 'StarTechConf 2013',
   :start_date => Date.new(2013,10,25), :end_date => Date.new(2013,10,26),
   :place => ' USM Campus San Joaquin, CL', :place_url => 'http://goo.gl/maps/G0O7G',
   :twitter => 'startechconf', :url => 'http://www.startechconf.com/',
-  :tags => ['ruby', 'python', 'java', 'mobile', 'javascript', 'html5', 'css3'])
+  :tags => ['ruby', 'python', 'java', 'mobile', 'javascript', 'html5', 'css3'],
+  :year => 2013, :short_url => 'startechconf')
 
 rubyconfar2012 = Conference.create(:title => 'RubyConf Argentina 2012',
   :description => '¡El mayor evento Ruby de habla hispana, donde nos reunimos a compartir y aprender sobre las últimas tecnologías!',
@@ -28,7 +30,8 @@ rubyconfar2012 = Conference.create(:title => 'RubyConf Argentina 2012',
   :start_date => Date.new(2012,10,19), :end_date => Date.new(2012,10,20),
   :place => 'Paseo La Plaza, AR', :place_url => 'http://goo.gl/maps/z0vIo',
   :twitter => 'RubyConfAr', :url => 'http://2012.rubyconfargentina.org/',
-  :tags => ['ruby', 'rails'])
+  :tags => ['ruby', 'rails'],
+  :year => 2012, :short_url => 'rubyconfar')
 
 soveran = Speaker.create(:name => 'Michel Martens',
   :image_url => 'https://si0.twimg.com/profile_images/3001078658/42ffd0a3f827cafc6d8ab6c4b08043b3_bigger.jpeg',
