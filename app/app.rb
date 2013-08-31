@@ -1,5 +1,6 @@
 module Confy
   class App < Padrino::Application
+    register LessInitializer
     register Padrino::Rendering
     register Padrino::Helpers
 

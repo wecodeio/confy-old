@@ -4,7 +4,7 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title= title || "confy - the conferences' talks directory"
     %link{:href => "/stylesheets/pure-min.css", :rel => "stylesheet"}/
-    %link{:href => "/stylesheets/confy.css", :rel => "stylesheet"}/
+    #{stylesheet_link_tag Rack::Less.stylesheet('confy')}
     %link{:href => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel => "stylesheet"}/
     %script{:src => "http://use.typekit.net/ajf8ggy.js"}
     :javascript

@@ -4,6 +4,6 @@
 :mock: none
 :script: jquery
 :renderer: haml
-:stylesheet: none
+:stylesheet: less
 :namespace: Confy
 :migration_format: number

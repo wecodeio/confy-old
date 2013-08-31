@@ -14,6 +14,9 @@ source 'https://rubygems.org'
 gem 'rake'
 
 # Component requirements
+gem 'therubyracer'
+gem 'rack-less'
+gem 'less'
 gem 'haml'
 
 gem 'sequel'
