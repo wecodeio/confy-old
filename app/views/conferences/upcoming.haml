@@ -2,17 +2,17 @@
   %h1.content-subhead Upcoming conferences
   - conferences.each do |conference|
     %section.conference.pure-u-1
-      %aside.conference-logo.pure-u-1-5
+      %aside.logo.big.pure-u-1-5
         %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
       .conference-description.pure-u-4-5
-        %header.conference-header
-          %h2.conference-title #{conference.title}
+        %header
+          %h2.title #{conference.title}
           %p.conference-meta
             - conference.tags.each do |tag|
-              %span.conference-tag #{tag}
+              %span.tag #{tag}
         %p
           #{conference.description}
-        .conference-data
+        .data
           %span.when
             %i.icon-calendar
             #{date_range(conference.start_date, conference.end_date)}

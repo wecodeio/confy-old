@@ -3,9 +3,11 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %title= title || "confy - the conferences' talks directory"
-    %link{:href => "/stylesheets/pure-min.css", :rel => "stylesheet"}/
+
+    #{stylesheet_link_tag "/stylesheets/pure-min.css"}
     #{stylesheet_link_tag Rack::Less.stylesheet('confy')}
-    %link{:href => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel => "stylesheet"}/
+    #{stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"}
+
     %script{:src => "http://use.typekit.net/ajf8ggy.js"}
     :javascript
       try { Typekit.load(); } catch (e) {}
@@ -30,7 +32,7 @@
       .pure-u-1
         .content
           = yield
-          %footer.footer
+          %footer
             .pure-menu.pure-menu-horizontal.pure-menu-open
               %ul
                 %li

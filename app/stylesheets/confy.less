@@ -3,13 +3,6 @@
 @lighter2: lighten(spin(@base, 10), 20%);
 @darker1: darken(spin(@base, -5), 10%);
 @darker2: darken(spin(@base, -10), 20%);
- 
-/* Implementation */
-.one   {background-color: @base;}
-.two   {background-color: @lighter1;}
-.three {background-color: @lighter2;}
-.four  {background-color: @darker1;}
-.five  {background-color: @darker2;}
 
 * {
   -webkit-box-sizing: border-box;
@@ -108,34 +101,9 @@ a:focus {
 
 .conference {
   padding-bottom: 1em;
-  border-bottom: 1px solid #ddd;
-  margin: 15px 0;
-}
-.conference:last-child {
-  border-bottom: none;
-}
-.conference-title {
-  font-size: 2em;
-  color: #222;
-  margin-bottom: 0.2em;
+  margin: 10px 0;
 }
 
-.conference-logo {
-  height: 150px;
-  width: 150px;
-
-  border-radius: 80px;
-  border-style: solid;
-  border-width: thin;
-  border-color: #ddd;
-
-  display: inline-block;
-  float: left;
-  margin-right: 1em;
-}
-.conference-logo img {
-  border-radius: 80px;
-}
 .conference-description {
   font-family: Georgia, "Cambria", serif;
   color: #444;
@@ -149,135 +117,156 @@ a:focus {
   margin: 0;
 }
 
-.conference-tag {
-  margin: 0 0.1em;
-  padding: 0.3em 1em;
-  color: #fff;
-  background: #999;
-  font-size: 80%;
-  border-radius: 7px;
-  background: #18213D;
+.size(@dim: 100px) {
+  height: @dim;
+  width: @dim;
+}
+.big {
+  .size(150px);
+}
+.normal {
+  .size;
+}
+.small {
+  .size(80px);
 }
 
-.conference-data {
-  color: #999;
-  font-size: 0.8em;
+.speaker header a,
+.conference header a,
+.talk header a {
+  color: #222;
 }
 
-.conference-data span {
-  white-space: nowrap;
+
+.conference {
+  .tag {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+    border-radius: 7px;
+    background: @darker1;
+  }
+  .logo {
+    border-radius: 80px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #ddd;
+
+    display: inline-block;
+    float: left;
+    margin-right: 1em;
+
+    img {
+      border-radius: 80px;
+    }
+  }
+  .title {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 0.2em;
+    &.mini {
+      font-size: 1em;
+      a {
+        color: #222 !important;
+      }
+    }
+  }
+  .data {
+    color: #999;
+    font-size: 0.8em;
+
+    span {
+      white-space: nowrap;
+    }
+  }
 }
 
-.conference-images {
-  margin: 1em 0;
-}
-.conference-image-meta {
-  margin-top: -3.5em;
-  margin-left: 1em;
-  color: #fff;
-  text-shadow: 0 1px 1px #333;
-}
-
-.conferences-grid .conference {
-  border-bottom: none;
-}
-.conferences-grid .conference-logo {
-  width: 100px;
-  height: 100px;
-}
-.conferences-grid .conference-title {
-  font-size: 1em;
-}
-
-.speakers-grid .speaker {
-  position: relative;
-  margin-bottom: 1.5em;
-}
-.speaker-avathar {
-  width: 80px;
-  height: 80px;
+.avathar {
   text-align: center;
   display: inline-block;
+  img {
+    border-radius: 80px;
+  }
 }
-.speaker-avathar img {
-  border-radius: 80px;
+
+.speaker {
+
+  position: relative;
+  margin-bottom: 1.5em;
+
+  .name {
+    font-size: 1em;
+  }
+  header {
+    margin-left: 8px;
+    position: absolute;
+    top: 1em;
+    display: inline-block;
+  }
 }
+
 .speaker-hero {
   border-bottom: 1px solid #DDDDDD;
   padding-bottom: 10px;
   margin-bottom: 20px;
-}
-.speaker-hero .info {
-  display: inline-block;
-  margin-left: 10px;
-  margin-top: 0;
-  position: absolute;
-}
-.speaker-header a,
-.talk-header a,
-.conference-title a {
-  color: #222;
-}
-.speakers-grid header {
-  margin-left: 8px;
-  position: absolute;
-  top: 1em;
-  display: inline-block;
-}
-.speakers-grid .speaker-name {
-  font-size: 1em;
-}
-
-.talk-video {
-  padding: 5px;
-}
-.talk-header {
   position: relative;
-  margin-top: 15px;
-}
-.talk-header .title {
-  font-size: 1em;
-  font-weight: bold;
-  line-height: 1em;
-}
-.talk-header.jumbo h1 {
-  font-size: 1.5em;
-}
-.talk .video {
-  margin-top: 20px;
-}
-.talk .speaker-avathar {
-  float: left;
-}
-.talk .info {
-  display: inline-block;
-  margin-left: 0.5em;
-}
-.talk .info .speaker-name {
-  margin-bottom: 0.1em;
-  margin-top: 0.5em;
+
+  .info {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 0;
+    position: absolute;
+  }
 }
 
-.talk .info .title {
-  margin-top: 0;
+.talk {
+  .video {
+    padding: 5px;
+  }
+  header {
+    position: relative;
+    margin-top: 15px;
+    .title {
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 1em;
+    }
+  }
 }
 
-.data {
-  text-align: center;
-  padding: 1em 0;
+.speaker-mini {
+  .avathar {
+    float: left;
+  }
+  .info {
+    margin-left: 7px;
+    display: inline-block;
+
+    .name {
+      margin-bottom: 0px;
+    }
+    h1 {
+      margin-top: 5px;
+    }
+  }
 }
 
-.footer {
+footer {
   border-top: 1px solid #ddd;
   height: 40px;
   margin-top: 40px;
-}
-.footer a {
-  color: #777;
-}
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-  background: none;
+
+  a {
+    color: #777;
+  }
+
+  .pure-menu a:hover,
+  .pure-menu a:focus {
+    background: none;
+  }
+
 }
 
 @media (max-width: 767px) {

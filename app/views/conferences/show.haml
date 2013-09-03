@@ -1,15 +1,15 @@
 %section.conference.pure-u-1
-  %aside.conference-logo.pure-u-1-5
+  %aside.logo.big.pure-u-1-5
     %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
   .conference-description.pure-u-4-5
-    %header.conference-header
-      %h2.conference-title #{conference.title}
+    %header
+      %h2.title #{conference.title}
       %p.conference-meta
         - conference.tags.each do |tag|
-          %span.conference-tag #{tag}
+          %span.tag #{tag}
     %p
       #{conference.description}
-    .conference-data
+    .data
       %span.when
         %i.icon-calendar
         #{date_range(conference.start_date, conference.end_date)}
@@ -27,16 +27,18 @@
         %a{href: conference.url, title: conference.title, target: 'blank'} #{url_cropper(conference.url)}
 
 - if conference.talks.count > 0
-  %section.talks-grid.pure-g-r
+  %section.pure-g-r
     - conference.talks.each do |talk|
       %article.talk.pure-u-1-2
-        .talk-video
+        .video
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
-        %header.talk-header
-          .speaker-avathar
+        %header.speaker-mini
+          .avathar.small
             %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
           .info
-            %p.speaker-name #{talk.speaker.name}
+            %p.name 
+              %a{:href => "/speakers/#{talk.speaker.twitter}"}
+                #{talk.speaker.name}
             %h1.title
               %a{:href => "/talks/show/#{talk.id}"}
                 #{talk.title}

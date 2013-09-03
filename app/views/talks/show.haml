@@ -1,9 +1,12 @@
 .talk
-  %header.talk-header.jumbo
-    .speaker-avathar
-      %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
-    .info
-      %p.speaker-name #{talk.speaker.name}
-      %h1.title #{talk.title}
   .video
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "500", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
+  %header.speaker-mini
+    .avathar.small
+      %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
+    .info
+      %p.name 
+        %a{:href => "/speakers/#{talk.speaker.twitter}"}
+          #{talk.speaker.name}
+      %h1.title
+        #{talk.title}

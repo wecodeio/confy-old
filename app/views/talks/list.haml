@@ -1,15 +1,17 @@
 .talks
   %h1.content-subhead All talks
-  %section.talks-grid.pure-g-r
+  %section.pure-g-r
     - talks.each do |talk|
       %article.talk.pure-u-1-2
-        .talk-video
+        .video
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
-        %header.talk-header
-          .speaker-avathar
+        %header.speaker-mini
+          .avathar.small
             %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
           .info
-            %p.speaker-name #{talk.speaker.name}
+            %p.name 
+              %a{:href => "/speakers/#{talk.speaker.twitter}"}
+                #{talk.speaker.name}
             %h1.title
               %a{:href => "/talks/show/#{talk.id}"}
                 #{talk.title}
