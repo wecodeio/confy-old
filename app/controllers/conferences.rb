@@ -14,8 +14,8 @@ Confy::App.controllers :conferences do
       :layout => 'layout'
   end
 
-  get ':year/:short_url' do
-    conference = Conference.where(:year => params[:year], :short_url => params[:short_url]).first
+  get ':year/:slug' do
+    conference = Conference.where(:year => params[:year], :slug => params[:slug]).first
     render 'conferences/show',
       locals: { conference: conference, title: "#{conference.title} - confy" },
       :layout => 'layout'
