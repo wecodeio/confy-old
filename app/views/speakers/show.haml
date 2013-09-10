@@ -14,7 +14,7 @@
         %header.talk-header
           .info
             %h1.title
-              %a{:href => "/talks/show/#{talk.id}"}
+              %a{:href => "/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}"}
                 #{talk.title}
 - else
   .alert-info

@@ -40,7 +40,7 @@
               %a{:href => "/speakers/#{talk.speaker.twitter}"}
                 #{talk.speaker.name}
             %h1.title
-              %a{:href => "/talks/show/#{talk.id}"}
+              %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
                 #{talk.title}
 - else
   .alert-info

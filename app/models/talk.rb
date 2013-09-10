@@ -10,4 +10,8 @@ class Talk < Sequel::Model
     Speaker[speaker_id]
   end
 
+  def conference
+    Conference[conference_id]
+  end
+
 end

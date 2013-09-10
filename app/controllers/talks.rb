@@ -8,8 +8,9 @@ Confy::App.controllers :talks do
       :layout => 'layout'
   end
 
-  get 'show/:id' do
-    talk = Talk[params[:id]]
+  get ':year/:conference_slug/:talk_slug' do
+    conference = Conference.where(:year => params[:year], :slug => params[:conference_slug]).first
+    talk = Talk.where(:conference_id => conference.id, :slug => params[:talk_slug]).first
     render 'talks/show',
       locals: { talk: talk, title: "#{talk.title} - confy" },
       :layout => 'layout'
