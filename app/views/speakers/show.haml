@@ -3,7 +3,7 @@
     %img{:title => speaker.name, :alt => speaker.name, :src => speaker.image_url}/
   .info
     %header
-      %h2.name #{speaker.name}
+      %h2.name.title #{speaker.name}
 
 - if speaker.talks.count > 0
   %section.talks-grid.pure-g-r
