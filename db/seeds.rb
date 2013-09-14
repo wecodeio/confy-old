@@ -38,7 +38,6 @@ soveran = Speaker.create(:name => 'Michel Martens',
 
 smallTools = Talk.create(:title => 'The Power of Small Tools',
   :video_url => 'https://vimeo.com/63628137',
-  :date => Date.new(2012,10,19),
   :speaker_id => soveran.id,
   :conference_id => rubyconfar2012.id,
   :slug => 'the-power-of-small-tools')
@@ -48,7 +47,6 @@ jano = Speaker.create(:name => 'Jano González',
 
 interfaces = Talk.create(:title => '¿Dónde están mis interfaces?',
   :video_url => 'https://vimeo.com/62132088',
-  :date => Date.new(2012,10,19),
   :speaker_id => jano.id,
   :conference_id => rubyconfar2012.id,
   :slug => 'donde-estan-mis-interfaces')

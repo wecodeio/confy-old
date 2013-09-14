@@ -2,7 +2,7 @@ class Talk < Sequel::Model
 
   self.dataset_module do
     def sorted
-      order(:date)
+      order(:title) #change by conference.start_date
     end
   end
 
