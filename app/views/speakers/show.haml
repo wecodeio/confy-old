@@ -4,6 +4,8 @@
   .info
     %header
       %h2.name.title #{speaker.name}
+      .twitter
+        %a{:href => "//twitter.com/#{speaker.twitter}"} @#{speaker.twitter}
 
 - if speaker.talks.count > 0
   %section.talks-grid.pure-g-r
