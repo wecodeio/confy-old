@@ -34,7 +34,6 @@ rubyconfar2012 = Conference.create(:title => 'RubyConf Argentina 2012',
   :year => 2012, :slug => 'rubyconfar')
 
 soveran = Speaker.create(:name => 'Michel Martens',
-  :image_url => 'http://confy-assets.wecode.io/speakers/soveran.jpeg',
   :twitter => 'soveran')
 
 smallTools = Talk.create(:title => 'The Power of Small Tools',
@@ -45,7 +44,6 @@ smallTools = Talk.create(:title => 'The Power of Small Tools',
   :slug => 'the-power-of-small-tools')
 
 jano = Speaker.create(:name => 'Jano González',
-  :image_url => 'http://confy-assets.wecode.io/speakers/janogonzalez.jpeg',
   :twitter => 'janogonzalez')
 
 interfaces = Talk.create(:title => '¿Dónde están mis interfaces?',

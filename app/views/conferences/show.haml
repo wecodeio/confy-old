@@ -34,7 +34,7 @@
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
         %header.speaker-mini
           .avathar.small
-            %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => talk.speaker.image_url}/
+            %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter)}/
           .info
             %p.name 
               %a{:href => "/speakers/#{talk.speaker.twitter}"}

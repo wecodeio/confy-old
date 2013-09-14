@@ -1,6 +1,6 @@
 .speaker-hero
   .avathar.small
-    %img{:title => speaker.name, :alt => speaker.name, :src => speaker.image_url}/
+    %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter)}/
   .info
     %header
       %h2.name.title #{speaker.name}

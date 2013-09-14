@@ -5,7 +5,7 @@
       %article.speaker.pure-u-1-4
         %a{:href => "/speakers/#{speaker.twitter}"}
           .avathar.small
-            %img{:title => speaker.name, :alt => speaker.name, :src => speaker.image_url}/
+            %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter)}/
         %header
           %a{:href => "/speakers/#{speaker.twitter}"}
             %h2.name #{speaker.name}
