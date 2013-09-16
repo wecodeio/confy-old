@@ -25,6 +25,10 @@ gem 'sequel-pg_array'
 gem 'pg'
 
 # Test requirements
+group :test do
+  gem "minitest", "~> 5.0.7"
+  gem "rack-test"
+end
 
 # Padrino Stable Gem
 gem 'padrino', '0.11.3'

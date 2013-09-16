@@ -18,6 +18,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
+    minitest (5.0.7)
     multi_json (1.7.8)
     padrino (0.11.3)
       padrino-admin (= 0.11.3)
@@ -56,6 +57,8 @@ GEM
       rack (~> 1.0)
     rack-protection (1.5.0)
       rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
     rake (10.1.0)
     ref (1.0.5)
     sequel (4.1.1)
@@ -81,9 +84,11 @@ PLATFORMS
 DEPENDENCIES
   haml
   less
+  minitest (~> 5.0.7)
   padrino (= 0.11.3)
   pg
   rack-less
+  rack-test
   rake
   sequel
   sequel-pg_array

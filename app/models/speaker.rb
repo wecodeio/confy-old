@@ -1,8 +1,12 @@
 class Speaker < Sequel::Model
 
-  self.dataset_module do
+  dataset_module do
     def sorted
       order(:name)
+    end
+
+    def find_by_twitter(twitter)
+      where(twitter: twitter).first
     end
   end
 
