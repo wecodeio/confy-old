@@ -1,6 +1,6 @@
 .talk
   .video
-    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "500", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
   %header.speaker-mini
     .avathar.small
       %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter)}/
@@ -12,5 +12,14 @@
         #{talk.title}
     .social
       %a.twitter-share-button{"data-dnt" => "true", "data-hashtags" => "confy", "data-lang" => "en", "data-via" => "wecodeio", :href => "https://twitter.com/share"} Tweet
+
+#disqus_thread
 :javascript
+  var disqus_shortname = 'confy';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
