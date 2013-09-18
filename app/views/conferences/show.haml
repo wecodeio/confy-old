@@ -43,7 +43,7 @@
               %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
                 #{talk.title}
           .social
-            %a.twitter-share-button{"data-hashtags" => "confy", "data-lang" => "en", "data-text" => "#{talk.title}, by #{talk.speaker.name}", "data-url" => "http://confy.wecode.io/talks/#{conference.year}/#{conference.slug}/#{talk.slug}", "data-via" => "wecodeio", :href => "https://twitter.com/share"} Tweet
+            %a.twitter-share-button{"data-hashtags" => "confy", "data-lang" => "en", "data-text" => "#{talk.title} by #{talk.speaker.name}", "data-url" => "http://confy.wecode.io/talks/#{conference.year}/#{conference.slug}/#{talk.slug}", "data-via" => "wecodeio", :href => "https://twitter.com/share"} Tweet
 - else
   .alert-info
     There aren't any talks for this conference (yet)
