@@ -10,9 +10,14 @@ Confy::App.controllers :speakers do
 
   get ':twitter' do |twitter|
     speaker = Speaker.find_by_twitter(twitter)
-    render 'speakers/show',
-      locals: { speaker: speaker, title: "#{speaker.name} - confy" },
-      :layout => 'layout'
+
+    if speaker then
+      render 'speakers/show',
+        locals: { speaker: speaker, title: "#{speaker.name} - confy" },
+        :layout => 'layout'
+    else
+      redirect 'speakers/list'
+    end
   end
 
 end
