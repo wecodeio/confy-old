@@ -239,62 +239,68 @@ a:focus {
   }
 }
 
-.video {
-  padding: 5px;
-  img {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
+.talks-grid{
+  margin-left: 40px;
+  overflow: hidden;
+  .talk {
+    width: 350px;
+    float: left;
+    margin: 15px;
     border-radius: 10px;
-    &:hover {
-      opacity: .8;
-      transition: opacity .5s ease-in-out;
-      -moz-transition: opacity .5s ease-in-out;
-      -webkit-transition: opacity .5s ease-in-out;
-      -o-transition: opacity .5s ease-in-out;
+    .video {
+      width: 350px;
+      height: 262px;
+      img {
+        border-radius: 10px 10px 0 0;
+      }
     }
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
-    -o-transition: opacity .5s ease-in-out;
+    header {
+      position: relative;
+      padding-top: 5px;
+      min-height: 85px;
+      .title {
+        font-size: 1em;
+        font-weight: bold;
+        line-height: 1em;
+      }
+    }
+
+    aside {
+      background-color: #eee;
+      border-radius: 0 0 10px 10px;
+      .speaker-mini {
+        .info {
+          width: 255px;
+        }
+      }
+    }
+
   }
 }
 
-.talk {
-  height: 175px;
-  &.jumbo {
-    height: 600px;
-    .video {
-      float: none !important;
+.talks-grid-speaker {
+  .talk {
+    header {
+      min-height: 50px;
+      margin-left: 15px;
     }
   }
-  .video {
-    float: left;
-  }
+}
+
+.talk.jumbo {
   header {
-    position: relative;
-    margin-top: 15px;
-    min-height: 90px;
-    .title {
-      font-size: 1em;
-      font-weight: bold;
-      line-height: 1em;
-    }
-  }
-  aside {
-    float: left;
-    margin-left: 1.5em;
+    margin-top: 10px;
   }
 }
 
 .speaker-mini {
+  position: relative;
   .avathar {
     float: left;
   }
   .info {
     margin-left: 7px;
     display: inline-block;
-
     .name {
       margin-bottom: 0px;
       font-size: 0.8em;
@@ -304,6 +310,12 @@ a:focus {
       margin-top: 5px;
     }
   }
+}
+
+.social {
+  position: absolute;
+  right: 7px;
+  top: 8px;
 }
 
 #disqus_thread {

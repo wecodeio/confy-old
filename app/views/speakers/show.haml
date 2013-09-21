@@ -8,7 +8,7 @@
         %a{:href => "//twitter.com/#{speaker.twitter}"} @#{speaker.twitter}
 
 - if speaker.talks.count > 0
-  %section.talks-grid
+  %section.talks-grid.talks-grid-speaker
     - speaker.talks.each do |talk|
       %article.talk
         .video
