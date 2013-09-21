@@ -37,8 +37,7 @@ describe 'SpeakersController' do
         end
 
         last_response.must_be :redirect?
-        follow_redirect!
-        assert_equal last_request.url, twitter_not_valid_redirection
+        last_response.location.must_match /list\z/
       end
     end
 

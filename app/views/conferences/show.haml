@@ -27,21 +27,24 @@
         %a{href: conference.url, title: conference.title, target: 'blank'} #{url_cropper(conference.url)}
 
 - if conference.talks.count > 0
-  %section.pure-g-r
+  %section
     - conference.talks.each do |talk|
-      %article.talk.pure-u-1-2
+      %article.talk
         .video
-          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
-        %header.speaker-mini
-          .avathar.small
-            %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter)}/
-          .info
-            %p.name 
+          %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
+            %img{title: talk.title, alt: talk.title, src: video_thumbnail(talk.video_url) }
+        %aside.meta
+          %header.speaker-mini
+            .avathar.small
               %a{:href => "/speakers/#{talk.speaker.twitter}"}
-                #{talk.speaker.name}
-            %h1.title
-              %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
-                #{talk.title}
+                %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter)}/
+            .info
+              %p.name 
+                %a{:href => "/speakers/#{talk.speaker.twitter}"}
+                  #{talk.speaker.name}
+              %h1.title
+                %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
+                  #{talk.title}
           .social
             %a.twitter-share-button{"data-hashtags" => "confy", "data-lang" => "en", "data-text" => "#{talk.title} by #{talk.speaker.name}", "data-url" => "http://confy.wecode.io/talks/#{conference.year}/#{conference.slug}/#{talk.slug}", "data-via" => "wecodeio", :href => "https://twitter.com/share"} Tweet
 - else

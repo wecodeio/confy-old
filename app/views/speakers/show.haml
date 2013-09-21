@@ -8,18 +8,18 @@
         %a{:href => "//twitter.com/#{speaker.twitter}"} @#{speaker.twitter}
 
 - if speaker.talks.count > 0
-  %section.talks-grid.pure-g-r
+  %section.talks-grid
     - speaker.talks.each do |talk|
-      %article.talk.pure-u-1-2
-        .talk-video
-          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "282", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
-        %header.talk-header
-          .info
-            %h1.title
-              %a{:href => "/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}"}
-                #{talk.title}
-          .social
-            %a.twitter-share-button{"data-hashtags" => "confy", "data-lang" => "en", "data-text" => "#{talk.title}, by #{talk.speaker.name}", "data-url" => "http://confy.wecode.io/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}", "data-via" => "wecodeio", :href => "https://twitter.com/share"} Tweet
+      %article.talk
+        .video
+          %a{:href => "/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}"}
+            %img{title: talk.title, alt: talk.title, src: video_thumbnail(talk.video_url) }
+        %aside
+          %header.talk-header
+            .info
+              %h1.title
+                %a{:href => "/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}"}
+                  #{talk.title}
 - else
   .alert-info
     There aren't any talks for this speaker (yet)
