@@ -2,7 +2,7 @@ Confy::App.controllers :speakers do
 
   @title = 'speakers - confy'
 
-  get :list do
+  get :index do
     render 'speakers/list',
       locals: { speakers: Speaker.sorted, title: @title },
       :layout => 'layout'

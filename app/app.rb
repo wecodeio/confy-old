@@ -9,5 +9,6 @@ module Confy
     get :index do
       redirect 'conferences/upcoming'
     end
+
   end
 end

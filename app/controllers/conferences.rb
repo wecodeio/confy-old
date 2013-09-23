@@ -8,7 +8,7 @@ Confy::App.controllers :conferences do
       :layout => 'layout'
   end
 
-  get :list do
+  get :index do
     render 'conferences/list',
       locals: { conferences: Conference.sorted, title: @title },
       :layout => 'layout'
