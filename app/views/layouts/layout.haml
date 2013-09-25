@@ -1,7 +1,10 @@
+!!! 5
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    - if defined?(talk)
+      #{meta_tag video_thumbnail(talk.video_url), :property => "og:image"}
     %title= title || "confy - the conferences' talks directory"
 
     #{stylesheet_link_tag "/stylesheets/pure-min.css"}
