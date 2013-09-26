@@ -6,7 +6,7 @@ Confy::App.controllers :talks do
     conference = Conference.where(:year => params[:year], :slug => params[:conference_slug]).first
     talk = Talk.where(:conference_id => conference.id, :slug => params[:talk_slug]).first
     render 'talks/show',
-      locals: { talk: talk, title: "#{talk.title} by @#{talk.speaker.twitter}" },
+      locals: { talk: talk, title: "\"#{talk.title}\" by @#{talk.speaker.twitter}, at @#{talk.conference.twitter}" },
       :layout => 'layout'
   end
 
