@@ -31,13 +31,19 @@
             your conference isn't in the list?
             %a{href: 'http://www.twitter.com/wecodeio'} Tweet us!
         .contact
-          %ul
-            %li
-              %a{:href => "http://twitter.com/wecodeio"}
-                %i.icon-twitter.icon-2x
-            %li
-              %a{:href => "http://github.com/wecodeio/confy"}
-                %i.icon-github.icon-2x
+          .socials
+            %ul
+              %li
+                %a{:href => "http://twitter.com/wecodeio"}
+                  %i.icon-twitter.icon-2x
+              %li
+                %a{:href => "http://github.com/wecodeio/confy"}
+                  %i.icon-github.icon-2x
+          .love
+            Made with
+            %i.icon-heart
+            by
+            %a{:href => '//twitter.com/wecodeio'}wecode.io
       .pure-u-1
         .content
           = yield
