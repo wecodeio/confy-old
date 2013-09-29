@@ -4,6 +4,8 @@
 @darker1: darken(spin(@base, -5), 10%);
 @darker2: darken(spin(@base, -10), 20%);
 
+@link_color: #8e8ed6;
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -225,8 +227,18 @@ a:focus {
   header {
     margin-left: 8px;
     position: absolute;
-    top: 1em;
+    top: .7em;
     display: inline-block;
+    h2 {
+      margin-top: 0em;
+      margin-bottom: 0.3em;
+    }
+    .twitter {
+      font-size: 0.8em;
+      a {
+        color: @link_color;
+      }
+    }
   }
 }
 
@@ -342,7 +354,8 @@ a:focus {
       margin-right: 10px;
     }
   }
-  a:hover {
+  a:hover,
+  a:focus {
     text-decoration: none;
   }
   .socials {
@@ -352,6 +365,10 @@ a:focus {
   .love {
     float: right;
     clear: both;
+    color: #777;
+    i {
+      color: #c00;
+    }
   }
 }
 

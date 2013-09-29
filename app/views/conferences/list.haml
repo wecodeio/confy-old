@@ -1,13 +1,14 @@
 .conferences
-  %header
-    %h1.content-subhead All conferences
-  %section.conferences-grid.pure-g-r
-    - conferences.each do |conference|
-      %article.conference.pure-u-1-3
-        .logo.normal
-          %a{:href => "/conferences/#{conference.year}/#{conference.slug}"}
-            %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
-        %header
-          %h2.title.mini
+  - Conference.all.group_by { |c| c.year }.sort.reverse.each do |conference_group|
+    %header
+      %h1.content-subhead #{conference_group[0]}
+    %section.conferences-grid.pure-g-r
+      - conference_group[1].each do |conference|
+        %article.conference.pure-u-1-3
+          .logo.normal
             %a{:href => "/conferences/#{conference.year}/#{conference.slug}"}
-              #{conference.title}
+              %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
+          %header
+            %h2.title.mini
+              %a{:href => "/conferences/#{conference.year}/#{conference.slug}"}
+                #{conference.title}
