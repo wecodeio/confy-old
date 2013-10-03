@@ -1,5 +1,5 @@
 .conferences
-  - Conference.all.group_by { |c| c.year }.sort.reverse.each do |conference_group|
+  - conferences_grouped_by_year(conferences).each do |conference_group|
     %header
       %h1.content-subhead #{conference_group[0]}
     %section.conferences-grid.pure-g-r
