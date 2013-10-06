@@ -14,7 +14,7 @@ Confy::App.helpers do
   end
 
   def url_cropper(url)
-    url.sub('http://','').sub('www.','').reverse.sub('/','').reverse
+    url.gsub(/\A(http:\/\/)?(www\.)?(.*?)\/?\z/,'\3')
   end
 
   private
