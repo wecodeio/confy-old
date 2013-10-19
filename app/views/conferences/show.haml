@@ -1,18 +1,3 @@
-- if conference.slug == 'rubyconfar'
-  %section.tickets-banner.js-appear
-    .content
-      .text
-        You can still have a place in
-        %a{href: '/conferences/2013/rubyconfar'}
-          RubyConf Argentina 2013
-        !
-      .button
-        %a{href: 'https://eventioz.com.ar/e/rubyconf-argentina-2013/registrations/new', class: 'pure-button confy-button', target: '_blank'}
-          %i.icon-ticket
-          Get my ticket
-      .close
-        %a{class:'js-close'} &#10799;
-
 %section.conference.pure-u-1
   %aside.logo.big.pure-u-1-5
     %img{:title => conference.title, :alt => conference.title, :src => conference.image_url}/
@@ -41,9 +26,9 @@
         %i.icon-external-link
         %a{href: conference.url, title: conference.title, target: 'blank'} #{url_cropper(conference.url)}
 
-- if conference.talks.count > 0
+- if talks.size > 0
   %section.talks-grid
-    - conference.talks.each do |talk|
+    - talks.each do |talk|
       %article.talk
         .video
           %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
@@ -74,6 +59,3 @@
   })();
 
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-
-  $(".js-appear").delay(2500).slideDown(1000);
-  $(".js-close").on('click', function() {$(this).parent().parent().delay(100).slideUp(300);});
