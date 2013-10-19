@@ -16,8 +16,9 @@ Confy::App.controllers :conferences do
 
   get ':year/:slug' do
     conference = Conference.where(:year => params[:year], :slug => params[:slug]).first
+    talks = conference.talks_with_speakers
     render 'conferences/show',
-      locals: { conference: conference, title: "#{conference.title} - confy" },
+      locals: { conference: conference, talks: talks, title: "#{conference.title} - confy" },
       :layout => 'layout'
   end
 

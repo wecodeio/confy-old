@@ -1,13 +1,11 @@
 class Talk < Sequel::Model
 
+  many_to_one :speaker
+
   self.dataset_module do
     def sorted
       order(:title) #change by conference.start_date
     end
-  end
-
-  def speaker
-    Speaker[speaker_id]
   end
 
   def conference
