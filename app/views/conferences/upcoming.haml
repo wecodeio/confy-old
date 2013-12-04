@@ -1,5 +1,11 @@
 .conferences
   %h1.content-subhead Upcoming conferences
+  - if conferences.count == 0
+    .alert-info
+      Looks like there's no conferences in the near future, but you can enjoy other
+      #{link_to "conferences", url(:conferences, :index)} or
+      %a{href: 'http://www.twitter.com/ConfyTalks'} tweet us
+      your conference.
   - conferences.each do |conference|
     %section.conference.pure-u-1
       %aside.logo.big.pure-u-1-5
