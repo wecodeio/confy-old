@@ -51,6 +51,12 @@ interfaces = Talk.create(:title => '¿Dónde están mis interfaces?',
   :conference_id => rubyconfar2012.id,
   :slug => 'donde-estan-mis-interfaces')
 
+ruby_me_programo = Talk.create(:title => 'Cómo Ruby me programó a mí',
+  :video_url => 'http://www.youtube.com/watch?v=LNtmg-btc5E',
+  :speaker_id => jano.id,
+  :conference_id => rubyconfar2012.id,
+  :slug => 'como-ruby-me-programo-a-mi')
+
 rubyconfar2011 = Conference.create(:title => 'RubyConf Argentina 2011',
   :description => 'The largest event in the Ruby Community in the Spanish speaking world. RubyConf Argentina 2011 was a two-day event held in Buenos Aires the 8th and 9th of November 2011, focused on Ruby and modern web technologies related to the Ruby programming language.',
   :image_url => 'http://confy-assets.wecode.io/conferences/rubyconfar-2011.png',
@@ -59,3 +65,6 @@ rubyconfar2011 = Conference.create(:title => 'RubyConf Argentina 2011',
   :twitter => 'RubyConfAr', :url => 'http://2011.rubyconfargentina.org/',
   :tags => ['ruby', 'rails'],
   :year => 2011, :slug => 'rubyconfar')
+
+jperez = Speaker.create(:name => 'Juan Perez',
+  :twitter => 'jperez')
