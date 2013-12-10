@@ -5,7 +5,7 @@
       %article.speaker.pure-u-1-4
         %a{:href => "/speakers/#{speaker.twitter}"}
           .avathar.small
-            %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter)}/
+            %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
         %header
           %a{:href => "/speakers/#{speaker.twitter}"}
             %h2.name #{speaker.name}

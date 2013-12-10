@@ -4,7 +4,7 @@
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
   %header.speaker-mini
     .avathar.small
-      %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter)}/
+      %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
     .info
       %p.name 
         %a{:href => "/speakers/#{talk.speaker.twitter}"}
