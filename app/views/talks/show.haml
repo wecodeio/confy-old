@@ -1,5 +1,8 @@
 #fb-root
 .talk.jumbo
+  .goto-conference
+    %a{:href => "/conferences/#{conference.year}/#{conference.slug}"}
+      &larr; #{conference.title}
   .video
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
   %header.speaker-mini
