@@ -10,5 +10,11 @@ module Confy
       redirect 'conferences/upcoming'
     end
 
+    get :disclaimer do
+      render 'home/disclaimer',
+        locals: { title: 'Disclaimer - confy' },
+        :layout => 'layout'
+    end
+
   end
 end
