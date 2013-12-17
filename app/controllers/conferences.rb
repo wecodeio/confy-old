@@ -3,8 +3,10 @@ Confy::App.controllers :conferences do
   @title = 'conferences - confy'
 
   get :upcoming do
+    upcoming_conferences = Conference.upcoming.sorted
+    redirect url(:conferences, :index) if upcoming_conferences.count == 0
     render 'conferences/upcoming',
-      locals: { conferences: Conference.upcoming.sorted, title: 'Upcoming conferences - confy' },
+      locals: { conferences: upcoming_conferences, title: 'Upcoming conferences - confy' },
       :layout => 'layout'
   end
 

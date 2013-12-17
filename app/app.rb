@@ -7,7 +7,7 @@ module Confy
     enable :sessions
 
     get :index do
-      redirect 'conferences/upcoming'
+      redirect url(:conferences, :upcoming)
     end
 
     get :disclaimer do
