@@ -2,6 +2,7 @@ require 'date'
 
 Sequel.extension :pg_array
 
+DB[:speakers_talks].delete
 Talk.dataset.destroy
 Conference.dataset.destroy
 Speaker.dataset.destroy
