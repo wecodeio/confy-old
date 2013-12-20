@@ -1,7 +1,7 @@
 class Conference < Sequel::Model
 
   one_to_many :talks
-  one_to_many :talks_with_speakers, clone: :talks, eager: :speaker
+  one_to_many :talks_with_speakers, clone: :talks, eager: :speakers
 
   self.subset(:upcoming) {start_date > Date.today}
   

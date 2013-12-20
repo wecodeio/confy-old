@@ -20,9 +20,10 @@ jano = Speaker.create(:name => 'Jano González',
 
 ruby_me_programo = Talk.create(:title => 'Cómo Ruby me programó a mí',
   :video_url => 'http://www.youtube.com/watch?v=LNtmg-btc5E',
-  :speaker_id => jano.id,
   :conference_id => rubyconfar2013.id,
   :slug => 'como-ruby-me-programo-a-mi')
+
+jano.add_talk(ruby_me_programo)
 
 startechconf2013 = Conference.create(:title => 'StarTechConf 2013',
   :description => 'The conference that brings together world renowned stars in software development and local tech experts to talk about HTML5, CSS3, JavaScript, Ruby, Java, Python, Mobile and more.',
@@ -47,15 +48,17 @@ soveran = Speaker.create(:name => 'Michel Martens',
 
 smallTools = Talk.create(:title => 'The Power of Small Tools',
   :video_url => 'https://vimeo.com/63628137',
-  :speaker_id => soveran.id,
   :conference_id => rubyconfar2012.id,
   :slug => 'the-power-of-small-tools')
 
+soveran.add_talk(smallTools)
+
 interfaces = Talk.create(:title => '¿Dónde están mis interfaces?',
   :video_url => 'https://vimeo.com/62132088',
-  :speaker_id => jano.id,
   :conference_id => rubyconfar2012.id,
   :slug => 'donde-estan-mis-interfaces')
+
+jano.add_talk(interfaces)
 
 rubyconfar2011 = Conference.create(:title => 'RubyConf Argentina 2011',
   :description => 'The largest event in the Ruby Community in the Spanish speaking world. RubyConf Argentina 2011 was a two-day event held in Buenos Aires the 8th and 9th of November 2011, focused on Ruby and modern web technologies related to the Ruby programming language.',
@@ -68,3 +71,5 @@ rubyconfar2011 = Conference.create(:title => 'RubyConf Argentina 2011',
 
 jperez = Speaker.create(:name => 'Juan Perez',
   :twitter => 'jperez')
+
+jperez.add_talk(interfaces)

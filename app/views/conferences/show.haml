@@ -34,17 +34,18 @@
           %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
             %img{title: talk.title, alt: talk.title, src: video_thumbnail(talk.video_url) }
         %aside.meta
-          %header.speaker-mini
-            .avathar.small
-              %a{:href => "/speakers/#{talk.speaker.twitter}"}
-                %img{:title => talk.speaker.name, :alt => talk.speaker.name, :src => speaker_image_url(talk.speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
-            .info
-              %p.name 
-                %a{:href => "/speakers/#{talk.speaker.twitter}"}
-                  #{talk.speaker.name}
-              %h1.title
-                %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
-                  #{talk.title}
+          - talk.speakers.each do |speaker|
+            %header.speaker-mini
+              .avathar.small
+                %a{:href => "/speakers/#{speaker.twitter}"}
+                  %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
+              .info
+                %p.name
+                  %a{:href => "/speakers/#{speaker.twitter}"}
+                    #{speaker.name}
+                %h1.title
+                  %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
+                    #{talk.title}
 - else
   .alert-info
     There aren't any talks for this conference (yet)

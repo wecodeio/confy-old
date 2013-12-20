@@ -1,6 +1,6 @@
 class Speaker < Sequel::Model
 
-  one_to_many :talks
+  many_to_many :talks
 
   dataset_module do
     def sorted
