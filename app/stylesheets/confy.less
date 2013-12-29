@@ -156,9 +156,10 @@ a:focus {
 .conference header a,
 .talk header a {
   color: #222;
-  &:not(:last-child):after {
-    content: " - ";
-  }
+}
+
+.talk header a:not(:last-child):after {
+  content: " - ";
 }
 
 .speaker,
