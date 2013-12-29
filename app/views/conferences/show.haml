@@ -43,7 +43,8 @@
                 - talk.speakers.each do |speaker|
                   %a{:href => "/speakers/#{speaker.twitter}"} #{speaker.name}
               %h1.title
-                #{talk.title}
+                %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
+                  #{talk.title}
 - else
   .alert-info
     There aren't any talks for this conference (yet)
