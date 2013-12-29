@@ -50,6 +50,7 @@
         .content
           = yield
 
+    %script{:src => "/javascripts/minimal-carousel.js"}
     %script{:src => "http://yui.yahooapis.com/3.10.1/build/yui/yui-min.js"}
     :javascript
       YUI().use('node-base', 'node-event-delegate', function (Y) {

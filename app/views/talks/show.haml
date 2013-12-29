@@ -6,11 +6,16 @@
   .video
     %iframe{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => video_iframe(talk.video_url), :webkitallowfullscreen => "", :width => "100%"}
   %header.speaker-mini
-    - talk.speakers.each do |speaker|
-      .avathar.small
-        %a{:href => "/speakers/#{speaker.twitter}"}
-          %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
+    %ul
+      - talk.speakers.each do |speaker|
+        %li
+          .avathar.small
+            %a{:href => "/speakers/#{speaker.twitter}"}
+              %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
     .info
+      %p.name
+        - talk.speakers.each do |speaker|
+          %a{:href => "/speakers/#{speaker.twitter}"} #{speaker.name}
       %h1.title
         #{talk.title}
     .social
@@ -18,6 +23,11 @@
       .fb-like{"data-href" => "http://confy.wecode.io/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
 
 #disqus_thread
+:javascript
+  window.onload = function() {
+    new Carousel({ carousel: '.speaker-mini', delay: 7.5 })
+  }
+
 :javascript
   var disqus_shortname = 'confy';
   (function() {

@@ -156,6 +156,9 @@ a:focus {
 .conference header a,
 .talk header a {
   color: #222;
+  &:not(:last-child):after {
+    content: " - ";
+  }
 }
 
 .speaker,
@@ -316,6 +319,13 @@ a:focus {
 .speaker-mini,
 .conference-mini {
   position: relative;
+  ul {
+    padding: 1px 0 0 0;
+    margin: 0px;
+    li {
+      display: none;
+    }
+  }
   .avathar {
     float: left;
   }
