@@ -12,3 +12,4 @@
             %h2.title.mini
               %a{:href => "/conferences/#{conference.year}/#{conference.slug}"}
                 #{conference.title}
+            %p.data #{talks_counter(conference.talks.count)}

@@ -5,6 +5,16 @@ Confy::App.helpers do
     Hash[grouped_conferences.sort_by { |k, _| k }.reverse]
   end
 
+  def talks_counter(quantity)
+    if quantity > 1 then
+      "#{quantity} talks"
+    elsif quantity == 0
+      "No talks yet"
+    else
+      "1 talk" if quantity == 1
+    end
+  end
+
   def date_range(start_date, end_date)
     if start_date.month.eql? end_date.month
       "#{start_date.day}-#{end_date.day} #{month_name(end_date.month)} #{end_date.year}"
