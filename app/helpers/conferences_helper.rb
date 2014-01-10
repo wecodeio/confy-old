@@ -15,6 +15,12 @@ Confy::App.helpers do
     end
   end
 
+  def carousel_activator(ids)
+    ids.map do |id|
+      "new Carousel({ carousel: '#carousel-#{id}', delay: 7.5 });"
+    end.join("\n")
+  end
+
   def date_range(start_date, end_date)
     if start_date.month.eql? end_date.month
       "#{start_date.day}-#{end_date.day} #{month_name(end_date.month)} #{end_date.year}"

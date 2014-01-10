@@ -28,16 +28,19 @@
 
 - if talks.size > 0
   %section.talks-grid
-    - talks.each do |talk|
+    - talks.to_enum.with_index(1).each do |talk, i|
       %article.talk
         .video
           %a{:href => "/talks/#{conference.year}/#{conference.slug}/#{talk.slug}"}
             %img{title: talk.title, alt: talk.title, src: video_thumbnail(talk.video_url) }
         %aside.meta
-          %header.speaker-mini
-            .avathar.small
-              %a{:href => "/speakers/#{talk.speakers.first.twitter}"}
-                %img{:title => talk.speakers.first.name, :alt => talk.speakers.first.name, :src => speaker_image_url(talk.speakers.first.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
+          %header{:id => "carousel-#{i}", :class => 'speaker-mini'}
+            %ul
+              - talk.speakers.each do |speaker|
+                %li
+                  .avathar.small
+                    %a{:href => "/speakers/#{speaker.twitter}"}
+                      %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
             .info
               %p.name
                 - talk.speakers.each do |speaker|
@@ -50,6 +53,11 @@
     There aren't any talks for this conference (yet)
 .breaker
 #disqus_thread
+:javascript
+  window.onload = function() {
+    #{carousel_activator(talks.to_enum.with_index(1).map do |element, i| i end)}
+  }
+
 :javascript
   var disqus_shortname = 'confy';
   (function() {
