@@ -11,7 +11,7 @@ Sequel.migration do
   down do
     drop_table(:speakers_talks)
     alter_table(:talks) do
-      foreign_key(:speaker_id, :speakers, :key=>:id)
+      foreign_key :speaker_id, :speakers
     end
   end
 end

@@ -3,6 +3,8 @@ require 'date'
 Sequel.extension :pg_array
 
 DB[:speakers_talks].delete
+DB[:playlists_talks].delete
+Playlist.dataset.destroy
 Talk.dataset.destroy
 Conference.dataset.destroy
 Speaker.dataset.destroy
@@ -74,3 +76,11 @@ jperez = Speaker.create(:name => 'Juan Perez',
   :twitter => 'jperez')
 
 jperez.add_talk(interfaces)
+
+lista = Playlist.create(:title => 'Charlas cool',
+  :description => 'Es un compendio de charlas bastante interesante',
+  :slug => 'charlas-cool',
+  :curator => jperez)
+
+lista.add_talk(interfaces)
+lista.add_talk(smallTools)

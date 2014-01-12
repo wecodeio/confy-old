@@ -1,0 +1,53 @@
+%section.playlist.pure-u-1
+  %aside.logo.big.pure-u-1-5
+    %img{:title => playlist.curator.name, :alt => playlist.curator.name, :src => speaker_image_url(playlist.curator.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
+  .playlist-description.pure-u-4-5
+    %header
+      %h2.title #{playlist.title}
+    %p.curator
+      Curated by
+      %a{:href => "/speakers/#{playlist.curator.twitter}"} #{playlist.curator.name}
+    %p.description
+      #{playlist.description}
+
+- if talks.size > 0
+  %section.talks-grid
+    - talks.to_enum.with_index(1).each do |talk, i|
+      %article.talk
+        .video
+          %a{:href => "/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}"}
+            %img{title: talk.title, alt: talk.title, src: video_thumbnail(talk.video_url) }
+        %aside.meta
+          %header{:id => "carousel-#{i}", :class => 'speaker-mini'}
+            %ul
+              - talk.speakers.each do |speaker|
+                %li
+                  .avathar.small
+                    %a{:href => "/speakers/#{speaker.twitter}"}
+                      %img{:title => speaker.name, :alt => speaker.name, :src => speaker_image_url(speaker.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
+            .info
+              %p.name
+                - talk.speakers.each do |speaker|
+                  %a{:href => "/speakers/#{speaker.twitter}"} #{speaker.name}
+              %h1.title
+                %a{:href => "/talks/#{talk.conference.year}/#{talk.conference.slug}/#{talk.slug}"}
+                  #{talk.title}
+- else
+  .alert-info
+    There aren't any talks for this playlist (yet)
+.breaker
+#disqus_thread
+:javascript
+  window.onload = function() {
+    #{carousel_activator(talks.to_enum.with_index(1).map do |element, i| i end)}
+  }
+
+:javascript
+  var disqus_shortname = 'confy';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');

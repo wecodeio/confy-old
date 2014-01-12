@@ -1,0 +1,16 @@
+.playlists
+  %h1.content-subhead All curated playlists
+  %section.playlists-grid.pure-g-r
+    - playlists.each do |playlist|
+      %article.playlist.pure-u-1-3
+        .logo.normal
+          %a{:href => "/playlists/#{playlist.curator.twitter}/#{playlist.slug}"}
+            %img{:title => playlist.curator.name, :alt => playlist.curator.name, :src => speaker_image_url(playlist.curator.twitter), :onerror => 'this.src="http://confy-assets.wecode.io/speakers/generic-speaker.png"'}/
+        %header
+          %h2.title.mini
+            %a{:href => "/playlists/#{playlist.curator.twitter}/#{playlist.slug}"}
+              #{playlist.title}
+          %p.curator
+            Curated by 
+            %a{:href => "/speakers/#{playlist.curator.twitter}"} #{playlist.curator.name}
+          %p.data #{talks_counter(playlist.talks.count)}

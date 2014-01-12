@@ -46,7 +46,7 @@ a:focus {
 }
 
 .header {
-  margin: 50% 2em 0;
+  margin: 30% 2em 0;
   text-align: right;
 }
 
@@ -119,12 +119,14 @@ a:focus {
   }
 }
 
-.conference {
+.conference,
+.playlist {
   padding-bottom: 1em;
   margin: 10px 0;
 }
 
-.conference-description {
+.conference-description,
+.playlist-description {
   font-family: Georgia, "Cambria", serif;
   color: #444;
   line-height: 1.8em;
@@ -164,7 +166,8 @@ a:focus {
 
 .speaker,
 .talk,
-.conference {
+.conference,
+.playlist {
   margin: -1px;
 }
 
@@ -172,7 +175,8 @@ a:focus {
   font-family: 'Droid Sans', sans-serif;
 }
 
-.conference {
+.conference,
+.playlist {
   .tag {
     margin: 0 0.1em;
     padding: 0.3em 1em;
@@ -215,6 +219,19 @@ a:focus {
     span {
       white-space: nowrap;
     }
+  }
+}
+.playlist {
+  .curator {
+    color: #999;
+    font-size: 0.8em;
+    margin: 0;
+    span {
+      white-space: nowrap;
+    }
+  }
+  .description {
+    margin-top: 0px;
   }
 }
 
