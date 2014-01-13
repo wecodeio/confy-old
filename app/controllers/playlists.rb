@@ -10,7 +10,7 @@ Confy::App.controllers :playlists do
 
   get ':curator/:slug' do
     playlist = Playlist.where(:curator => Speaker.where(:twitter => params[:curator]), :slug => params[:slug]).first
-    talks = playlist.talks_with_conference
+    talks = playlist.talks_with_conference_and_speakers
     render 'playlists/show',
       locals: { playlist: playlist, talks: talks, title: "#{playlist.title} - confy" },
       :layout => 'layout'
