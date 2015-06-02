@@ -1,4 +1,4 @@
-Confy::Api.controllers :speakers do
+Confy::API.controllers :speakers do
   include JsonHelper
 
   get :index do

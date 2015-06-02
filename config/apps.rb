@@ -6,5 +6,5 @@ Padrino.configure_apps do
 end
 
 # Mounts the core application for this project
-Padrino.mount('Confy::Api', :app_file => Padrino.root('api/api.rb')).to('/api')
+Padrino.mount('Confy::API', :app_file => Padrino.root('api/api.rb')).to('/api')
 Padrino.mount('Confy::App', :app_file => Padrino.root('app/app.rb')).to('/')

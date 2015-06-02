@@ -1,4 +1,4 @@
-Confy::Api.controllers :conferences do
+Confy::API.controllers :conferences do
   include JsonHelper
 
   get :index do
