@@ -11,6 +11,9 @@ GEM
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     i18n (0.6.4)
+    jbuilder (2.2.16)
+      activesupport (>= 3.0.0, < 5)
+      multi_json (~> 1.2)
     less (2.3.3)
       commonjs (~> 0.2.6)
     libv8 (3.16.14.3)
@@ -72,6 +75,9 @@ GEM
       ref
     thor (0.17.0)
     tilt (1.3.7)
+    tilt-jbuilder (0.6.1)
+      jbuilder
+      tilt (<= 1.5.0)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -93,3 +99,7 @@ DEPENDENCIES
   sequel
   sequel-pg_array
   therubyracer
+  tilt-jbuilder
+
+BUNDLED WITH
+   1.10.2

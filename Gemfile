@@ -18,6 +18,7 @@ gem 'therubyracer'
 gem 'rack-less'
 gem 'less'
 gem 'haml'
+gem 'tilt-jbuilder'
 
 gem 'sequel'
 gem 'sequel-pg_array'
